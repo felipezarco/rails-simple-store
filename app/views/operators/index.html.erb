@@ -1,0 +1,24 @@
+<h1>Operator List</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Department</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @operators.each do |operator| %>
+      <tr>
+        <td class="attr-name"><%= operator.name %></td>
+        <td class="attr-title"><%= Department.all.find(operator.department_id).title %></td>
+        <td align="right">
+          <%= link_to "edit", edit_operator_path(operator), :class => "btn btn-warning" %>
+          <%= link_to 'delete', operator, method: :delete, :class => "btn btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'new', new_operator_path, :class => "btn btn-primary" %>

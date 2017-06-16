@@ -1,0 +1,21 @@
+header {
+  padding-left: 25px;
+  background-color: #cc0000;
+  color: #FFF;
+  padding-bottom: 5px;
+}
+
+header h1 {
+  font-size: 70px;
+  color: #FFF;
+}
+
+header h6 {
+	font-size: 25px;
+	font-style: italic;
+}
+
+.login {
+  padding-top: 10px;
+  padding-right: 10px;
+}

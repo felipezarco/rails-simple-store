@@ -1,0 +1,16 @@
+
+.attr-title, .attr-name {
+  font-size: 15px;
+}
+
+.attr-description {
+  font-style: italic;
+}
+
+.attr-price {
+  font-weight: bold;
+}
+
+.attr-image {
+  text-align: center;
+}

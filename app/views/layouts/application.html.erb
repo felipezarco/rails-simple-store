@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Loja</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <!-- Header row -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <header>
+          <div align="right" class="login">
+            <% if session[:user_id] %>
+              <%= link_to "Logout", logout_path, method: :delete, :class => "btn btn-default btn-sm" %>
+            <% else %>
+              <%= link_to "Log In", login_path, :class => "btn btn-success" %>
+            <% end %>
+          </div>
+          <h1>Store App</h1>
+          <h6>The best store of funs things!</h6>
+        </header>
+      </div>
+    </div>
+
+    <% if notice %>
+      <div class="row">
+        <div class="col-md-12">
+          <p class="notice"><%= notice %></p>
+        </div>
+      </div>
+    <% end %>
+
+    <!-- Main row -->
+    <div class="row">
+
+      <% if session[:user_id] %>
+        <div class="col-md-9 content">
+          <%= yield %>
+        </div>
+        <div class="col-md-3 menu">
+          <nav>
+            <ul>
+              <li><%= link_to "Home", home_path %></li>
+              <li><%= link_to "Categories", categories_path %></li>
+              <li><%= link_to "Products", products_path %></li>
+              <li><%= link_to "Departments", departments_path %></li>
+              <li><%= link_to "Operators", operators_path %></li>
+              <li><%= link_to "Users", users_path %></li>
+            </ul>
+          </nav>
+
+        </div>
+      <% else %>
+
+        <div class="col-md-12 content">
+          <%= yield %>
+        </div>
+
+      <% end %>
+    </div>
+
+    <!-- Footer row -->
+    <div class="row">
+      <footer class="col-md-12">
+        Developed by Zarco at Codus.
+      </footer>
+    </div>
+
+  </div>
+  </body>
+
+</html>

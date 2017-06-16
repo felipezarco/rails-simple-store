@@ -1,0 +1,12 @@
+<h1><%= @category.title %></h2>
+<div class="back"><%= link_to '< All of categories', home_path %></div>
+
+<table class="table">
+  <% @category.products.each do |product| %>
+    <div class="item">
+      <div class="item-title"><%= product.title %></div>
+      <div class="item-image"><%= image_tag(product.image_url) %></div>
+      <div class="item-price"><%= number_to_currency(product.price) %></div>
+    </div>
+  <% end %>
+</table>

@@ -1,0 +1,20 @@
+<%= link_to '< List of operators', operators_path %>
+
+<div class="inner-form">
+  <%= form_for @operator do |f| %>
+    <fieldset>
+      <legend>Operator information</legend>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, :class => "form-control", :placeholder => "Operator name" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :department %>
+        <%= f.collection_select :department_id, Department.all, :id, :title, { :include_blank => "Select Operator's Department" }, { :class => "form-control" }  %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Save Operator", :class => "btn btn-success" %>
+      </div>
+    </fieldset>
+  <% end %>
+</div>

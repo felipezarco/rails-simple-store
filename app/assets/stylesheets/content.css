@@ -1,0 +1,15 @@
+.content h1 {
+  color: darkblue;
+}
+
+.inner-form {
+  padding-top: 15px;
+  width: 40%;
+  max-width: 300px;
+  margin: auto;
+}
+
+fieldset legend {
+  text-align: center;
+  padding-bottom: 10px;
+}

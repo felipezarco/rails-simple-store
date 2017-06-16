@@ -1,0 +1,27 @@
+
+.menu nav {
+	margin-top: 25px;
+
+}
+
+.menu nav ul {
+	padding-left: 0px;
+	list-style: none;
+	border: 1px solid #cc0000;
+}
+
+.menu nav li {
+
+}
+
+.menu nav li a {
+	display: block;
+	padding: 8px;
+	text-align: left;
+	text-decoration: none;
+}
+
+.menu nav li a:hover {
+	background-color: #cc0000;
+	color: #fff;
+}

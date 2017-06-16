@@ -1,0 +1,21 @@
+<h1>Product Catalog</h1>
+
+<div align="right">
+  Filter by category:
+  <% @categories.each do |category| %>
+    <%= link_to "#{category.title}", category, :class => "btn btn-info btn-sm" %>
+  <% end %>
+</div>
+
+<% @categories.each do |category| %>
+  <table class="table">
+    <h2><%= category.title %></h2>
+    <% category.products.each do |product| %>
+      <div class="item">
+        <div class="item-title"><%= product.title %></div>
+        <div class="item-image"><%= image_tag(product.image_url) %></div>
+        <div class="item-price"><%= number_to_currency(product.price) %></div>
+      </div>
+    <% end %>
+  </table>
+<% end %>

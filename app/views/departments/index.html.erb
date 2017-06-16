@@ -1,0 +1,24 @@
+<h1>Departments List</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @departments.each do |department| %>
+      <tr>
+        <td class="attr-title"><%= department.title %></td>
+        <td class="attr-description"><%= department.description %></td>
+        <td align="right">
+          <%= link_to "edit", edit_department_path(department), :class => "btn btn-warning" %>
+          <%= link_to 'delete', department, method: :delete, :class => "btn btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'new', new_department_path, :class => "btn btn-primary" %>

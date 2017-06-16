@@ -1,0 +1,24 @@
+<h1>User List</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>User-name</th>
+      <th>Operator</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td class="attr-name"><%= user.name %></td>
+        <td class="attr-operator"><%= @operators.find(user.operator_id).name %></td>
+        <td align="right">
+          <%= link_to "edit", edit_user_path(user), :class => "btn btn-warning" %>
+          <%= link_to "delete", user, method: :delete, :class => "btn btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'new', new_user_path, :class => "btn btn-primary" %>
